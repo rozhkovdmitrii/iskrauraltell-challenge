@@ -47,7 +47,12 @@ int wmain(int argc, wchar_t ** argv) {
 	utilities::setCLI_EncodingUTF8Mode();
 	try {
 		doArticleQueryProcessing(argc, argv);
-	} catch (const wchar_t * e) {
+	} 
+	catch (const wchar_t * e) {
+		wcerr << e << endl;
+		ExitProcess(GetLastError());
+	}
+	catch (const wstring e) {
 		wcerr << e << endl;
 		ExitProcess(GetLastError());
 	}

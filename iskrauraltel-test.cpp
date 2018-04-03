@@ -116,6 +116,7 @@ namespace iskratelChallengeTests {
 		ASSERT_EQ(2, distance(prodRng.first, prodRng.second));
 		as.clear();
 	}
+
 }
 
 int main(int argc, char *argv[]) {

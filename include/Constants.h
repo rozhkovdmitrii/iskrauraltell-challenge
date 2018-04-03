@@ -9,9 +9,9 @@ namespace iskratelChallenge {
 			"version 1.00, 2018-04-01\n"
 			"(C) Dmitrii Rozhkov (rozhkovdmitrii@yandex.ru)\n"
 			"Usage:\n"
-			"\tiskrauraltel-challenge.exe sourceDir destDir \"(producer|article) = concrete_value\" [\"(producer|article) = concrete_value\" ...]\n"
+			"\tarticle-storage.exe sourceDir destDir \"(producer|article) = concrete_value\" [\"(producer|article) = concrete_value\" ...]\n"
 			"Examples:\n"
-			"\tiskrauraltel-challenge.exe g:\\temp g:\\temp \"producer = Дары кубани\" \"article = Картошка\" \"producer = Апшерон\"";
+			"\tiskrauraltel-challenge.exe g:\\temp g:\\results \"producer = Дары кубани\" \"article = Картошка\" \"producer = Апшерон\"";
 
 		static const wchar_t * ArticlePattern = L"^\\s*([^,]*[^\\s\\t,])\\s*,\\s*([^,]*[^\\s\\t,])\\s*,\\s*((\\d*[.])?\\d+)\\s*,\\s*((\\d*[.])?\\d+)\\s*$";
 		static const wchar_t * QueryPattern = L"^\\s*(producer|article)\\s*=\\s*(.+)\\s*$";
