@@ -10,7 +10,8 @@ namespace iskratelChallenge {
 			"(C) Dmitrii Rozhkov (rozhkovdmitrii@yandex.ru)\n"
 			"Usage:\n"
 			"\tarticle-storage.exe sourceDir destDir \"(producer|article) = concrete_value\" [\"(producer|article) = concrete_value\" ...]\n"
-			"Examples:\n"
+			"\n!!!BE AWARE!!! Input *.article files should be encoded as UTF8 for correct processing"
+			"\n\nExamples:\n"
 			"\tiskrauraltel-challenge.exe g:\\temp g:\\results \"producer = Дары кубани\" \"article = Картошка\" \"producer = Апшерон\"";
 
 		static const wchar_t * ArticlePattern = L"^\\s*([^,]*[^\\s\\t,])\\s*,\\s*([^,]*[^\\s\\t,])\\s*,\\s*((\\d*[.])?\\d+)\\s*,\\s*((\\d*[.])?\\d+)\\s*$";

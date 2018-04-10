@@ -1,6 +1,6 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html><head>
-<title>New Document</title>
+<title>README</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
 /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
@@ -288,7 +288,7 @@ img {
   max-width: 100%
 }
 </style>
-<!-- base href="file:///G:/results/" -->
+<!-- base href="file:///G:/sources/c++/iskrauraltel-challenge/" -->
 </head>
 <body>
 <h1>Постановка задачи</h1>
@@ -308,24 +308,33 @@ img {
  и если они изменились, то обновляла бы и результирующие три файла.</p>
 <h1>Реализация</h1>
 <p>Программа <strong>article-storage.exe</strong> производит отслеживание изменений файлов *<strong>.article</strong>
- в исходном каталоге, адрес которого передается в первом параметре 
-вызова. Предполагается, что в каталоге могут находиться и другие файлы, 
-изменение которых не должно отразиться на работе программы. Программа 
-формирует выходные файлы данных *<strong>.result</strong>, в соответствии с произвольным количеством запросов, которые передаются начиная с третьего параметра вызова.</p>
-
-<h1>Инструкция по сборке</h1>
+ (в кодировке UTF8) в исходном каталоге, адрес которого передается в 
+первом параметре вызова. Предполагается, что в каталоге могут находиться
+ и другие файлы, изменение которых не должно отразиться на работе 
+программы. Программа формирует выходные файлы данных *<strong>.result</strong>, в соответствии с произвольным количеством запросов, которые передаются начиная с третьего параметра вызова.</p>
+<h1>Сборка</h1>
+<h5>Программа собиралась в windows 7 на Visual Studio 17. (В программе 
+используется стандартный модуль filesystem. C++17 предоставляет 
+возможности для кроссплатформенной работы с файловой системой. Для 
+отслеживания изменений исходного каталога Используется специфичный для 
+windows <em>ReadDirectoryChangesW</em>)</h5>
+<h2>Инструкция по сборке</h2>
+<p>Программа собирается при помощи cmake следующим образом:</p>
 <ol>
+<li>mkdir project</li>
 <li>cd project</li>
 <li>cmake ..</li>
 <li>cmake --build . --config Release</li>
 </ol>
 <p>В каталоге <strong>project\Release</strong> должны собраться файлы приложения <strong>article-storage</strong> и <strong>article-storage-tests</strong></p>
 <h1>Использование</h1>
+<h3>ВНИМАНИЕ - программа разработана для работы с входными файлами в 
+кодировке UTF8. Данные файлов в кодировке ANSI будут проигнорированы.</h3>
 <p>При неправильном использовании программа <strong>article-storage</strong> выводит страницу помощи.</p>
-<p><strong>article-storage</strong> используется следующим образом:</p>
-<blockquote>
+<hr>
+<h3><strong>article-storage</strong> используется следующим образом:</h3>
 <p>article-storage.exe <strong>sourceDir</strong> <strong>destDir</strong> "(producer|article) = concrete<em>value" ["(producer|article) = concrete</em>value" ...]</p>
-</blockquote>
+<hr>
 <p><strong>sourceDir</strong> - указывает на существующую, исходную директорию, в которой программа буде искать <strong>.article</strong> файлы с данными</p>
 <p><strong>destDir</strong> - указывает на целевую директорию, в которую программа размещает файлы <strong>.result</strong> в соответствии порядковому номеру запроса в строке запуска</p>
 <p><strong>"(producer|article) = concrete<em>value"</em></strong><em> - взятый в кавычки запрос, который позволяет выбирать товарные позиции по производителю или названию. Значение (<strong>concrete</strong></em><strong>value</strong>), по которому производится выборка располагается после знака равенства.</p>
